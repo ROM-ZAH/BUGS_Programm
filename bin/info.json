@@ -1,0 +1,28 @@
+{
+	"Camera_angle": 83,
+	"classificator": [{
+			"id": "1001",
+			"name": "Bedbug evil turtle",
+			"max_size": 0.012,
+			"min_size": 0.009
+		},
+		{
+			"id": "1002",
+			"name": "Bread striped flea",
+			"max_size": 0.011,
+			"min_size": 0.009
+		},
+		{
+			"id": "1003",
+			"name": "Bread beetles",
+			"max_size": 0.030,
+			"min_size": 0.025
+		},
+		{
+			"id": "1004",
+			"name": "meadow moth",
+			"max_size": 0.027,
+			"min_size": 0.018
+		}
+	]
+}

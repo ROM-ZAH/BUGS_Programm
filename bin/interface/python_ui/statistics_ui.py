@@ -1,0 +1,48 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Statistics(object):
+    def setupUi(self, Statistics):
+        Statistics.setObjectName("Statistics")
+        Statistics.resize(679, 322)
+        self.centralwidget = QtWidgets.QWidget(Statistics)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setMinimumSize(QtCore.QSize(661, 0))
+        font = QtGui.QFont()
+        font.setFamily("News706 BT")
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser.setMinimumSize(QtCore.QSize(661, 228))
+        self.textBrowser.setObjectName("textBrowser")
+        self.verticalLayout.addWidget(self.textBrowser)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        spacerItem = QtWidgets.QSpacerItem(478, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setMinimumSize(QtCore.QSize(181, 31))
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.pushButton.setFont(font)
+        self.pushButton.setText("Back to main menu")
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        Statistics.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(Statistics)
+        QtCore.QMetaObject.connectSlotsByName(Statistics)
+
+    def retranslateUi(self, Statistics):
+        f = open("../output data/statistics/statistics.txt")
+        text = f.read()
+        _translate = QtCore.QCoreApplication.translate
+        Statistics.setWindowTitle(_translate("Statistics", "Statistics"))
+        self.label.setText(_translate("Statistics", "Generated statistics "))
+        self.textBrowser.setText(_translate("Statistics", text))
