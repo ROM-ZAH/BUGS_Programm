@@ -3,24 +3,28 @@
 	"classificator": [{
 			"id": "1001",
 			"name": "Bedbug evil turtle",
+			"name_ru": "Клоп злая черепаха",
 			"max_size": 0.012,
 			"min_size": 0.009
 		},
 		{
 			"id": "1002",
 			"name": "Bread striped flea",
+			"name_ru": "Хлебная полосатая блоха",
 			"max_size": 0.011,
 			"min_size": 0.009
 		},
 		{
 			"id": "1003",
-			"name": "Bread beetles",
+			"name": "Bread beetle",
+			"name_ru": "Хлебный жук",	
 			"max_size": 0.030,
 			"min_size": 0.025
 		},
 		{
 			"id": "1004",
-			"name": "meadow moth",
+			"name": "Meadow moth",
+			"name_ru": "луговой мотылек",
 			"max_size": 0.027,
 			"min_size": 0.018
 		}

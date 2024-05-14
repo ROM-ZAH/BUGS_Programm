@@ -24,12 +24,10 @@ def erode(cycles, image):
     for _ in range(cycles):
          image = image.filter(ImageFilter.MinFilter(3))
     return image
-
 def dilate(cycles, image):
     for _ in range(cycles):
          image = image.filter(ImageFilter.MaxFilter(3))
     return image
-
 def do_a_JILuk(now_type_of_JILuk, number_bug):
     #print(now_type_of_JILuk)
     with Image.open(base_JILuk[now_type_of_JILuk][number_bug]) as img_JILuk:
@@ -56,7 +54,6 @@ def do_a_JILuk(now_type_of_JILuk, number_bug):
     new_JILuk = new_JILuk.filter(ImageFilter.BoxBlur(20))
     return JILuk, new_JILuk
     # new_JILuk.show()
-
 def some_parametr_of_PIC(number_bug, img):
     if number_bug >= 0:
         rnd_x_min = 100
@@ -66,8 +63,6 @@ def some_parametr_of_PIC(number_bug, img):
     else:
         rnd_x_min = rnd_x_max = rnd_y_min = rnd_y_max = -1
     return rnd_x_min, rnd_x_max, rnd_y_min, rnd_y_max
-
-
 def do_reduce_0_0(img, img_JILuk, h, number_bug):
     with open("info.json", "r") as read_file:
         data_of_info = json.load(read_file)
@@ -85,18 +80,20 @@ def do_reduce_0_0(img, img_JILuk, h, number_bug):
     if reduce == 0:
         redu = 1
     return int(reduce)
-
 def do_a_pic(Tr, JIL, mas_names):
+    print(mas_names)
     x = []
     y = []
     k = 0
     H = 0
     while sheet['A' + str(k + 1)].value != None:
         k += 1
+    print(mas_names[Tr-1])
     for j in range(k):
         if mas_names[Tr-1] == sheet['A' + str(j + 1)].value:
             H = sheet['F' + str(j + 1)].value
             break
+
     data = data_z
     with Image.open(Trava[Tr - 1]) as img:
         img.load()
@@ -159,41 +156,47 @@ def do_a_pic(Tr, JIL, mas_names):
     if JIL != -1:
         img.show()
     return x, y, img, data
-
-def load_a_start_pic_grass():
+def load_a_start_pic_grass(mydir_img):
     fon = []
     names = []
-    dir = "intermediate data for AP telemetry and blur"
+    dir = mydir_img
     fon_names = os.listdir(dir)
+    print("Start load PIC")
     for i in range(len(fon_names)):
         fon.append(dir + "/" + fon_names[i])
         names.append(fon_names[i])
 
+    print("Load PIC: OK")
     return fon, names
-
 def load_a_start_pic_bug():
     IOO1 = []
     IOO2 = []
     IOO3 = []
     IOO4 = []
-    dir = "../database/bug base/1001"
+    print("Start load BUG")
+    dir = '../database/bug base/1001'
+    print(os.listdir(dir))
     IOO1_names = os.listdir(dir)
     for i in range(len(IOO1_names)):
         IOO1.append(dir + "/" + IOO1_names[i])
     dir = "../database/bug base/1002"
+    print("1")
     IOO2_names = os.listdir(dir)
     for i in range(len(IOO2_names)):
         IOO2.append(dir + "/" + IOO2_names[i])
     dir = "../database/bug base/1003"
+    print("2")
     IOO3_names = os.listdir(dir)
     for i in range(len(IOO3_names)):
         IOO3.append(dir + "/" + IOO3_names[i])
     dir = "../database/bug base/1004"
+    print("3")
     IOO4_names = os.listdir(dir)
     for i in range(len(IOO4_names)):
         IOO4.append(dir + "/" + IOO4_names[i])
-    return IOO1, IOO2, IOO3, IOO4,
-
+    print("4")
+    print("Load BUG: OK")
+    return IOO1, IOO2, IOO3, IOO4
 def statistics_pic(names, mydir_save):
     way = mydir_save + "/pictures/"
     min_bug = 1000000
@@ -239,9 +242,7 @@ def statistics_pic(names, mydir_save):
     f.write("Average number of beetles type 1003 (Bread beetles) per picture - " + str(int(count_bug[2] / len(names))) + "\n")
     f.write("Average number of beetles type 1004 (meadow moth) per picture - "  + str(int(count_bug[3] / len(names))) + "\n")
     f.close()
-
-
-def start_data_synthesis(mydir_telemetry, mydir_save, genThred):
+def start_data_synthesis(mydir_telemetry, mydir_img, mydir_save, genThred):
     print("start syntes")
     global data_z
     data_z = {
@@ -269,7 +270,7 @@ def start_data_synthesis(mydir_telemetry, mydir_save, genThred):
 
     statistic_gen = [0, 0, 0, 0]
 
-    Trava, names = load_a_start_pic_grass()
+    Trava, names = load_a_start_pic_grass(mydir_img)
 
     wb = opxl.load_workbook(mydir_telemetry)
     global sheet
@@ -279,7 +280,6 @@ def start_data_synthesis(mydir_telemetry, mydir_save, genThred):
 
     global base_JILuk
     base_JILuk = [IOO1, IOO2, IOO3, IOO4]
-
     list(reversed(Trava))
 
     x = []

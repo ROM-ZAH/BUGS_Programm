@@ -1,32 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Referens</class>
+ <widget class="QMainWindow" name="Referens">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>243</width>
+    <height>243</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Referens</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>10</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imges/icon.ico</normaloff>../imges/icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="minimumSize">
+       <size>
+        <width>225</width>
+        <height>225</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Тут текст от папы... пока он его не написал б бла бла бла бла бла бла блабла бла бла бла бла бла блабла бла бла бла бла бла блабла бла бла бла бла бла блала бла бла бла бла бла бла</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../test.qrc"/>
+ </resources>
  <connections/>
 </ui>

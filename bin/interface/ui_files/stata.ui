@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Statistics</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../foto.qrc">
+    <normaloff>:/icon/interface/imges/icon.ico</normaloff>:/icon/interface/imges/icon.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -76,7 +80,7 @@
          </font>
         </property>
         <property name="text">
-         <string notr="true">Back to main menu</string>
+         <string notr="true">Back to generate menu</string>
         </property>
        </widget>
       </item>
@@ -85,6 +89,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../foto.qrc"/>
+ </resources>
  <connections/>
 </ui>
