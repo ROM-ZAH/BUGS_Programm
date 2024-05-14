@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>interface/imges/icon.ico</file>
+    <file>interface/imges/settings.ico</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>interface/imges/logo.png</file>
+    <file>interface/imges/krestik.png</file>
+    <file>interface/imges/JILDU.jpg</file>
+    <file>interface/imges/zelenaja-galochka.png</file>
+  </qresource>
+</RCC>
